@@ -3,9 +3,13 @@ import { EyeIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
+import { Author, Startup } from "@/sanity/types";
+
+export type StartupTypeCard = Omit<Startup, "author"> & { author?: Author }
 
 export default function StartupCard({post}: {post: StartupTypeCard}) {
     const { _createdAt, views, author, title, category, description, _id, image } = post
+
     
     return (
         <li className="startup-card group">
